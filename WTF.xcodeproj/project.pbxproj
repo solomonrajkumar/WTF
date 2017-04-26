@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BA6EAE9234E291A26D50771 /* Pods_WTF.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936BCC56546B8AB4738F2640 /* Pods_WTF.framework */; };
 		688CCDFB1EB0EB17008FD711 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688CCDFA1EB0EB17008FD711 /* AppDelegate.swift */; };
-		688CCDFD1EB0EB17008FD711 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688CCDFC1EB0EB17008FD711 /* ViewController.swift */; };
 		688CCE001EB0EB17008FD711 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 688CCDFE1EB0EB17008FD711 /* Main.storyboard */; };
 		688CCE021EB0EB17008FD711 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 688CCE011EB0EB17008FD711 /* Assets.xcassets */; };
 		688CCE051EB0EB17008FD711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 688CCE031EB0EB17008FD711 /* LaunchScreen.storyboard */; };
 		688CCE101EB0EB17008FD711 /* WTFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688CCE0F1EB0EB17008FD711 /* WTFTests.swift */; };
 		688CCE1B1EB0EB17008FD711 /* WTFUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688CCE1A1EB0EB17008FD711 /* WTFUITests.swift */; };
+		68E1BBA81EB0F13B0024609F /* WTFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E1BBA71EB0F13B0024609F /* WTFViewController.swift */; };
+		68E1BBAA1EB0F23C0024609F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E1BBA91EB0F23C0024609F /* Constants.swift */; };
+		68E1BBAC1EB0F2460024609F /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E1BBAB1EB0F2460024609F /* Restaurant.swift */; };
+		68E1BBAE1EB0F8560024609F /* UserLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E1BBAD1EB0F8560024609F /* UserLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25DFBC4A025F44E4D5C04D80 /* Pods-WTF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTF.release.xcconfig"; path = "Pods/Target Support Files/Pods-WTF/Pods-WTF.release.xcconfig"; sourceTree = "<group>"; };
 		688CCDF71EB0EB17008FD711 /* WTF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WTF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		688CCDFA1EB0EB17008FD711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		688CCDFC1EB0EB17008FD711 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		688CCDFF1EB0EB17008FD711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		688CCE011EB0EB17008FD711 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		688CCE041EB0EB17008FD711 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,12 @@
 		688CCE161EB0EB17008FD711 /* WTFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		688CCE1A1EB0EB17008FD711 /* WTFUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTFUITests.swift; sourceTree = "<group>"; };
 		688CCE1C1EB0EB17008FD711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68E1BBA71EB0F13B0024609F /* WTFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTFViewController.swift; sourceTree = "<group>"; };
+		68E1BBA91EB0F23C0024609F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		68E1BBAB1EB0F2460024609F /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		68E1BBAD1EB0F8560024609F /* UserLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserLocation.swift; sourceTree = "<group>"; };
+		92F2C827ECAEB8D8F765E4AF /* Pods-WTF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WTF.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WTF/Pods-WTF.debug.xcconfig"; sourceTree = "<group>"; };
+		936BCC56546B8AB4738F2640 /* Pods_WTF.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WTF.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BA6EAE9234E291A26D50771 /* Pods_WTF.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A1A0D21BA02D9020E24A588 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				936BCC56546B8AB4738F2640 /* Pods_WTF.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		688CCDEE1EB0EB16008FD711 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +100,8 @@
 				688CCE0E1EB0EB17008FD711 /* WTFTests */,
 				688CCE191EB0EB17008FD711 /* WTFUITests */,
 				688CCDF81EB0EB17008FD711 /* Products */,
+				DD221CD1AD6B918D87C781D0 /* Pods */,
+				1A1A0D21BA02D9020E24A588 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +118,10 @@
 		688CCDF91EB0EB17008FD711 /* WTF */ = {
 			isa = PBXGroup;
 			children = (
-				688CCDFA1EB0EB17008FD711 /* AppDelegate.swift */,
-				688CCDFC1EB0EB17008FD711 /* ViewController.swift */,
-				688CCDFE1EB0EB17008FD711 /* Main.storyboard */,
-				688CCE011EB0EB17008FD711 /* Assets.xcassets */,
-				688CCE031EB0EB17008FD711 /* LaunchScreen.storyboard */,
-				688CCE061EB0EB17008FD711 /* Info.plist */,
+				68E1BBA61EB0F0AF0024609F /* Model */,
+				68E1BBA51EB0F0AA0024609F /* View */,
+				68E1BBA41EB0F0A40024609F /* Controller */,
+				68E1BBA31EB0F09C0024609F /* Supporting Files */,
 			);
 			path = WTF;
 			sourceTree = "<group>";
@@ -125,6 +144,52 @@
 			path = WTFUITests;
 			sourceTree = "<group>";
 		};
+		68E1BBA31EB0F09C0024609F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68E1BBA91EB0F23C0024609F /* Constants.swift */,
+				688CCDFA1EB0EB17008FD711 /* AppDelegate.swift */,
+				688CCE011EB0EB17008FD711 /* Assets.xcassets */,
+				688CCE061EB0EB17008FD711 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		68E1BBA41EB0F0A40024609F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				68E1BBA71EB0F13B0024609F /* WTFViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		68E1BBA51EB0F0AA0024609F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				688CCDFE1EB0EB17008FD711 /* Main.storyboard */,
+				688CCE031EB0EB17008FD711 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		68E1BBA61EB0F0AF0024609F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				68E1BBAB1EB0F2460024609F /* Restaurant.swift */,
+				68E1BBAD1EB0F8560024609F /* UserLocation.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DD221CD1AD6B918D87C781D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92F2C827ECAEB8D8F765E4AF /* Pods-WTF.debug.xcconfig */,
+				25DFBC4A025F44E4D5C04D80 /* Pods-WTF.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +197,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 688CCE1F1EB0EB17008FD711 /* Build configuration list for PBXNativeTarget "WTF" */;
 			buildPhases = (
+				EA81F61D845674041E869448 /* [CP] Check Pods Manifest.lock */,
 				688CCDF31EB0EB17008FD711 /* Sources */,
 				688CCDF41EB0EB17008FD711 /* Frameworks */,
 				688CCDF51EB0EB17008FD711 /* Resources */,
+				40CE88B6E2FCF2BAB038DA00 /* [CP] Embed Pods Frameworks */,
+				243879A63F3128B8D331E1B1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,13 +325,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		243879A63F3128B8D331E1B1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WTF/Pods-WTF-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40CE88B6E2FCF2BAB038DA00 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WTF/Pods-WTF-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA81F61D845674041E869448 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		688CCDF31EB0EB17008FD711 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				688CCDFD1EB0EB17008FD711 /* ViewController.swift in Sources */,
+				68E1BBAC1EB0F2460024609F /* Restaurant.swift in Sources */,
+				68E1BBA81EB0F13B0024609F /* WTFViewController.swift in Sources */,
 				688CCDFB1EB0EB17008FD711 /* AppDelegate.swift in Sources */,
+				68E1BBAA1EB0F23C0024609F /* Constants.swift in Sources */,
+				68E1BBAE1EB0F8560024609F /* UserLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +530,7 @@
 		};
 		688CCE201EB0EB17008FD711 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92F2C827ECAEB8D8F765E4AF /* Pods-WTF.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QCNSV5U33C;
@@ -424,6 +544,7 @@
 		};
 		688CCE211EB0EB17008FD711 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25DFBC4A025F44E4D5C04D80 /* Pods-WTF.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = QCNSV5U33C;
@@ -512,6 +633,7 @@
 				688CCE211EB0EB17008FD711 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		688CCE221EB0EB17008FD711 /* Build configuration list for PBXNativeTarget "WTFTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +642,7 @@
 				688CCE241EB0EB17008FD711 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		688CCE251EB0EB17008FD711 /* Build configuration list for PBXNativeTarget "WTFUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +651,7 @@
 				688CCE271EB0EB17008FD711 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
