@@ -34,23 +34,15 @@ class WTFViewController: UIViewController {
                                 self.restaurantObject.searchRestaurant {
                                     // set the name of the restaurant
                                     self.restaurantNameLabel.text = PREFIX_RESTAURANT_NAME + self.restaurantObject.restaurantName + SUFFIX_RESTAURANT_NAME
-                                    
+                                    // set the restaurant cuisine
+                                    self.cuisinesLabel.text = PREFIX_RESTAURANT_CUISINE + self.restaurantObject.restaurantCuisine
+                                    // set the restaurant rating
+                                    self.restaurantRatingsLabel.text = PREFIX_RESTAURANT_RATING + self.restaurantObject.restaurantRating
                                 }
                             }, error: {
                                 (locationRequest, lastLocation, error) in
                                 print(error)
                             })
-        
-        
-        /*
-         // search for restaurant and stamp in the label in home page
-         restaurantObject.searchRestaurant {
-         DispatchQueue.main.async {
-         // set the restaurant name label
-         self.restaurantNameLabel.text = self.restaurantObject.restaurantName
-         }
-         }
-         */
         
     }
     

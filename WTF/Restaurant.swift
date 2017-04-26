@@ -16,7 +16,6 @@ class Restaurant{
     
     // Restaurant Name variable
     var _restaurantName: String!
-    
     // Getter for Restaurant name
     var restaurantName: String{
         if _restaurantName == nil{
@@ -27,13 +26,32 @@ class Restaurant{
     
     // Zomato link for the restaurant
     var _zomatoLinkForRestaurant: String!
-    
-    // Get the Zomato Link
+    // Getter the Zomato Link
     var zomatoLinkForRestaurant: String{
         if _zomatoLinkForRestaurant == nil{
             _zomatoLinkForRestaurant = ""
         }
         return _zomatoLinkForRestaurant
+    }
+    
+    // Restaurant Cuisines
+    var _restaurantCuisine: String!
+    // Getter for cuisines
+    var restaurantCuisine: String{
+        if _restaurantCuisine == nil{
+            _restaurantCuisine = ""
+        }
+        return _restaurantCuisine
+    }
+    
+    // Restaurant Rating
+    var _restaurantRating: String!
+    // Getter for Rating
+    var restaurantRating: String{
+        if _restaurantRating == nil{
+            _restaurantRating = ""
+        }
+        return _restaurantRating
     }
     
     // Description : Search Restaurant function
@@ -59,19 +77,41 @@ class Restaurant{
                         if let restaurantObject = restaurantListObject[0]["restaurant"] as? Dictionary<String, AnyObject>{
                             // Retrieve the restaurant's name
                             if let restaurantName = restaurantObject["name"] as? String{
+                                // set restaurant name
                                 self._restaurantName = restaurantName
-                                print(self.restaurantName)
                             } else{
                                 // if restaurant name is not present
-                                print("Restaurant name is missing!")
+                                print("Restaurant name object is missing!")
                             }
+                            
                             // Retrieve the zomato link
                             if let zomatoLinkForRestaurant = restaurantObject["deeplink"] as? String{
                                 self._zomatoLinkForRestaurant = zomatoLinkForRestaurant
                             } else{
                                 // if restaurant link is not present
-                                print("Restaurant link is missing!")
+                                print("Restaurant link object is missing!")
                             }
+                            
+                            // Retrieve cuisines
+                            if let restaurantCuisine = restaurantObject["cuisines"] as? String{
+                                self._restaurantCuisine = restaurantCuisine
+                            } else{
+                                // if restaurant link is not present
+                                print("Restaurant cuisines object is missing!")
+                            }
+                            
+                            // Retrieve ratings
+                            if let userRating = restaurantObject["user_rating"] as? Dictionary<String, AnyObject>{
+                                if let aggregatedRating = userRating["aggregate_rating"] as? String{
+                                    self._restaurantRating = aggregatedRating
+                                } else{
+                                    print("User rating object is missing!")
+                                }
+                            } else{
+                                // if restaurant link is not present
+                                print("Restaurant user rating object is missing!")
+                            }
+                            
                             completed()
                         } else{
                             // if restaurant object is missing

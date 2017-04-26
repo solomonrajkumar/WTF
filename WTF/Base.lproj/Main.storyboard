@@ -51,7 +51,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ove-kT-sRQ">
                                 <rect key="frame" x="66" y="356" width="181" height="30"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="19"/>
                                 <state key="normal" title="Take me to Zomato">
                                     <color key="titleColor" red="1" green="0.2203028829" blue="0.36139375270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>

@@ -30,6 +30,8 @@ let ZOMATO_SEARCH_RESTAURANT_URL = "\(ZOMATO_BASE_URL)\(ZOMATO_API_VERSION)\(ZOM
 
 // Prefix values for Labels
 let PREFIX_RESTAURANT_NAME = "Why don't you try \""
+let PREFIX_RESTAURANT_CUISINE = "Cuisines: "
+let PREFIX_RESTAURANT_RATING = "It has a zomato rating of "
 
 // Suffix values for Labels
 let SUFFIX_RESTAURANT_NAME = "\""
