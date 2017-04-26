@@ -1,0 +1,6 @@
+framework module Pods_WTF {
+  umbrella header "Pods-WTF-umbrella.h"
+
+  export *
+  module * { export * }
+}
