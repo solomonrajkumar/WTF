@@ -39,10 +39,10 @@ class WTFViewController: UIViewController {
                                     // set the restaurant rating
                                     self.restaurantRatingsLabel.text = PREFIX_RESTAURANT_RATING + self.restaurantObject.restaurantRating
                                 }
-                            }, error: {
-                                (locationRequest, lastLocation, error) in
-                                print(error)
-                            })
+        }, error: {
+            (locationRequest, lastLocation, error) in
+            print(error)
+        })
         
     }
     
@@ -52,9 +52,8 @@ class WTFViewController: UIViewController {
     }
     
     @IBAction func launchZomatoAction(_ sender: Any) {
+        let zomatoURL = NSURL(string: restaurantObject.zomatoLinkForRestaurant)!
         /*
-         let zomatoURL = NSURL(string: restaurantObject.zomatoLinkForRestaurant)!
-         /*
          if UIApplication.shared.canOpenURL(zomatoURL! as URL){
          UIApplication.shared.openURL(zomatoURL! as URL)
          } else{
@@ -62,13 +61,13 @@ class WTFViewController: UIViewController {
          UIApplication.shared.openURL(NSURL(string: "http://zomato.com/")! as URL)
          }
          */
-         
-         if #available(iOS 10.0, *) {
-         UIApplication.shared.open(zomatoURL as URL, options: [:], completionHandler: nil)
-         } else {
-         UIApplication.shared.openURL(zomatoURL as URL)
-         }
-         */
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(zomatoURL as URL, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(zomatoURL as URL)
+        }
+        
     }
     
     
