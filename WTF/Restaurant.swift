@@ -73,8 +73,10 @@ class Restaurant{
                 if let httpResponseObject = response.result.value as? Dictionary<String, AnyObject> {
                     // Search for restaurants Dictionary Array
                     if let restaurantListObject = httpResponseObject["restaurants"] as? [Dictionary<String, AnyObject>]{
+                        // pull a random number between 0 to 19; since zomato search returns 20 results
+                        let randomNumber = Int(arc4random_uniform(20))
                         // Search for restaurants Dictionary
-                        if let restaurantObject = restaurantListObject[0]["restaurant"] as? Dictionary<String, AnyObject>{
+                        if let restaurantObject = restaurantListObject[randomNumber]["restaurant"] as? Dictionary<String, AnyObject>{
                             // Retrieve the restaurant's name
                             if let restaurantName = restaurantObject["name"] as? String{
                                 // set restaurant name
