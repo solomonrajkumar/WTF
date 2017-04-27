@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NO-fB-aTY">
-                                <rect key="frame" x="16" y="54" width="288" height="58"/>
+                                <rect key="frame" x="16" y="54" width="343" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="2M4-un-Hqs"/>
                                 </constraints>
@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gW-MN-abG">
-                                <rect key="frame" x="16" y="143" width="288" height="58"/>
+                                <rect key="frame" x="16" y="143" width="343" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="qOg-4M-4ZT"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpU-qc-xdx">
-                                <rect key="frame" x="16" y="237" width="288" height="58"/>
+                                <rect key="frame" x="16" y="237" width="343" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="7pB-Ql-FUC"/>
                                 </constraints>
@@ -49,29 +49,31 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ove-kT-sRQ">
-                                <rect key="frame" x="66" y="356" width="181" height="30"/>
-                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="19"/>
-                                <state key="normal" title="Take me to Zomato">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ove-kT-sRQ">
+                                <rect key="frame" x="16" y="378" width="343" height="159"/>
+                                <state key="normal" image="zomato">
                                     <color key="titleColor" red="1" green="0.2203028829" blue="0.36139375270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="launchZomatoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jNK-9k-3HZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4gW-MN-abG" firstAttribute="top" secondItem="9NO-fB-aTY" secondAttribute="bottom" constant="31" id="0XR-N1-ut4"/>
                             <constraint firstItem="4gW-MN-abG" firstAttribute="leading" secondItem="9NO-fB-aTY" secondAttribute="leading" id="1Pj-eY-DuT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ove-kT-sRQ" secondAttribute="trailing" constant="57" id="4kU-Sf-3Pg"/>
                             <constraint firstItem="9NO-fB-aTY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="6x4-fr-LAN"/>
+                            <constraint firstItem="ove-kT-sRQ" firstAttribute="leading" secondItem="CpU-qc-xdx" secondAttribute="leading" id="82M-1A-FQa"/>
                             <constraint firstItem="4gW-MN-abG" firstAttribute="trailing" secondItem="9NO-fB-aTY" secondAttribute="trailing" id="83V-Yj-wqs"/>
-                            <constraint firstItem="ove-kT-sRQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="LpN-vx-aD7"/>
+                            <constraint firstItem="ove-kT-sRQ" firstAttribute="trailing" secondItem="CpU-qc-xdx" secondAttribute="trailing" id="897-pU-zwM"/>
                             <constraint firstItem="9NO-fB-aTY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="UDn-d3-z3v"/>
                             <constraint firstItem="CpU-qc-xdx" firstAttribute="trailing" secondItem="4gW-MN-abG" secondAttribute="trailing" id="Z7a-eq-h6z"/>
+                            <constraint firstItem="ove-kT-sRQ" firstAttribute="top" secondItem="CpU-qc-xdx" secondAttribute="bottom" constant="83" id="diM-a9-Xe9"/>
                             <constraint firstItem="CpU-qc-xdx" firstAttribute="top" secondItem="4gW-MN-abG" secondAttribute="bottom" constant="36" id="dll-IV-rMa"/>
-                            <constraint firstItem="ove-kT-sRQ" firstAttribute="top" secondItem="CpU-qc-xdx" secondAttribute="bottom" constant="61" id="h0r-7J-1Sd"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ove-kT-sRQ" secondAttribute="bottom" constant="130" id="heo-pM-lYR"/>
                             <constraint firstItem="CpU-qc-xdx" firstAttribute="leading" secondItem="4gW-MN-abG" secondAttribute="leading" id="lYb-X5-OSu"/>
                             <constraint firstItem="9NO-fB-aTY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qWU-Ir-Nsr"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ove-kT-sRQ" secondAttribute="bottom" constant="182" id="vh6-vm-NjX"/>
                         </constraints>
                     </view>
                     <connections>
@@ -82,7 +84,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.375" y="32.74647887323944"/>
+            <point key="canvasLocation" x="23.199999999999999" y="31.934032983508249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="zomato" width="1000" height="400"/>
+    </resources>
 </document>
