@@ -31,13 +31,9 @@ class WTFViewController: UIViewController {
                                 userLocationObject._longitude = "\(userLocation.coordinate.longitude)"
                                 
                                 // search for a nearby restaurant based on user's location
-                                self.restaurantObject.searchRestaurant {
-                                    // set the name of the restaurant
-                                    self.restaurantNameLabel.text = PREFIX_RESTAURANT_NAME + self.restaurantObject.restaurantName + SUFFIX_RESTAURANT_NAME
-                                    // set the restaurant cuisine
-                                    self.cuisinesLabel.text = PREFIX_RESTAURANT_CUISINE + self.restaurantObject.restaurantCuisine
-                                    // set the restaurant rating
-                                    self.restaurantRatingsLabel.text = PREFIX_RESTAURANT_RATING + self.restaurantObject.restaurantRating
+                                self.restaurantObject.searchRestaurant() {
+                                    // update all relevant labels
+                                    self.updateUI()
                                 }
         }, error: {
             (locationRequest, lastLocation, error) in
@@ -70,6 +66,22 @@ class WTFViewController: UIViewController {
         
     }
     
+    // Description : Function to search for a new restaurant
+    @IBAction func searchAgainAction(_ sender: Any) {
+        restaurantObject.searchForNewRestaurant(singletonHttpResponseObject: singletonHttpResponseObject)
+        // update all relevant labels
+        updateUI()
+    }
+    
+    // Description : Updates all labels in the UI
+    func updateUI(){
+        // set the name of the restaurant
+        self.restaurantNameLabel.text = PREFIX_RESTAURANT_NAME + self.restaurantObject.restaurantName + SUFFIX_RESTAURANT_NAME
+        // set the restaurant cuisine
+        self.cuisinesLabel.text = PREFIX_RESTAURANT_CUISINE + self.restaurantObject.restaurantCuisine
+        // set the restaurant rating
+        self.restaurantRatingsLabel.text = PREFIX_RESTAURANT_RATING + self.restaurantObject.restaurantRating
+    }
     
 }
 
