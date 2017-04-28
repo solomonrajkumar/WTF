@@ -50,12 +50,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ove-kT-sRQ">
-                                <rect key="frame" x="16" y="378" width="343" height="159"/>
+                                <rect key="frame" x="16" y="508" width="343" height="159"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="159" id="jFw-aR-euH"/>
+                                </constraints>
                                 <state key="normal" image="zomato">
                                     <color key="titleColor" red="1" green="0.2203028829" blue="0.36139375270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="launchZomatoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jNK-9k-3HZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V41-zH-ATS">
+                                <rect key="frame" x="150" y="303" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="hCK-Aw-d78"/>
+                                    <constraint firstAttribute="height" constant="75" id="yXQ-hP-vgm"/>
+                                </constraints>
+                                <state key="normal" image="reload"/>
+                                <connections>
+                                    <action selector="searchAgainAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uQO-mc-om0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -64,16 +78,17 @@
                             <constraint firstItem="4gW-MN-abG" firstAttribute="top" secondItem="9NO-fB-aTY" secondAttribute="bottom" constant="31" id="0XR-N1-ut4"/>
                             <constraint firstItem="4gW-MN-abG" firstAttribute="leading" secondItem="9NO-fB-aTY" secondAttribute="leading" id="1Pj-eY-DuT"/>
                             <constraint firstItem="9NO-fB-aTY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="6x4-fr-LAN"/>
-                            <constraint firstItem="ove-kT-sRQ" firstAttribute="leading" secondItem="CpU-qc-xdx" secondAttribute="leading" id="82M-1A-FQa"/>
                             <constraint firstItem="4gW-MN-abG" firstAttribute="trailing" secondItem="9NO-fB-aTY" secondAttribute="trailing" id="83V-Yj-wqs"/>
-                            <constraint firstItem="ove-kT-sRQ" firstAttribute="trailing" secondItem="CpU-qc-xdx" secondAttribute="trailing" id="897-pU-zwM"/>
+                            <constraint firstItem="V41-zH-ATS" firstAttribute="centerX" secondItem="CpU-qc-xdx" secondAttribute="centerX" id="DGv-8b-DEZ"/>
+                            <constraint firstItem="V41-zH-ATS" firstAttribute="top" secondItem="CpU-qc-xdx" secondAttribute="bottom" constant="8" symbolic="YES" id="F6t-0I-TVP"/>
                             <constraint firstItem="9NO-fB-aTY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="UDn-d3-z3v"/>
+                            <constraint firstItem="ove-kT-sRQ" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Xn1-KN-mpB"/>
                             <constraint firstItem="CpU-qc-xdx" firstAttribute="trailing" secondItem="4gW-MN-abG" secondAttribute="trailing" id="Z7a-eq-h6z"/>
-                            <constraint firstItem="ove-kT-sRQ" firstAttribute="top" secondItem="CpU-qc-xdx" secondAttribute="bottom" constant="83" id="diM-a9-Xe9"/>
                             <constraint firstItem="CpU-qc-xdx" firstAttribute="top" secondItem="4gW-MN-abG" secondAttribute="bottom" constant="36" id="dll-IV-rMa"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ove-kT-sRQ" secondAttribute="bottom" constant="130" id="heo-pM-lYR"/>
+                            <constraint firstItem="ove-kT-sRQ" firstAttribute="trailing" secondItem="CpU-qc-xdx" secondAttribute="trailing" id="lWK-C3-WdI"/>
                             <constraint firstItem="CpU-qc-xdx" firstAttribute="leading" secondItem="4gW-MN-abG" secondAttribute="leading" id="lYb-X5-OSu"/>
                             <constraint firstItem="9NO-fB-aTY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qWU-Ir-Nsr"/>
+                            <constraint firstItem="ove-kT-sRQ" firstAttribute="leading" secondItem="CpU-qc-xdx" secondAttribute="leading" id="zzW-Uk-aIn"/>
                         </constraints>
                     </view>
                     <connections>
@@ -88,6 +103,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="reload" width="100" height="100"/>
         <image name="zomato" width="1000" height="400"/>
     </resources>
 </document>
