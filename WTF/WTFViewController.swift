@@ -22,6 +22,9 @@ class WTFViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // to get shake gesture
+        self.becomeFirstResponder()
+        
         // Determine the user's location
         Location.getLocation(accuracy: .block, frequency: .oneShot, timeout: 30,
                              success: {
@@ -40,6 +43,22 @@ class WTFViewController: UIViewController {
             print(error)
         })
         
+    }
+    
+    // To become first responder to get shake motion
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    
+    // Enable detection of shake motion and change restaurant suggestion
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            restaurantObject.searchForNewRestaurant(singletonHttpResponseObject: singletonHttpResponseObject)
+            // update all relevant labels
+            updateUI()
+        }
     }
     
     override func didReceiveMemoryWarning() {
