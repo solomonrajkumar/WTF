@@ -8,8 +8,13 @@
 
 import UIKit
 import SwiftLocation
+import UberRides
+import CoreLocation
 
 class WTFViewController: UIViewController {
+    
+    let ridesClient = RidesClient()
+    let rideRequestbutton = RideRequestButton()
     
     let restaurantObject = Restaurant()
     
@@ -21,6 +26,12 @@ class WTFViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // center button
+        rideRequestbutton.center = view.center
+        
+        //put the button in the view
+        view.addSubview(rideRequestbutton)
         
         // to get shake gesture
         self.becomeFirstResponder()
@@ -37,6 +48,7 @@ class WTFViewController: UIViewController {
                                 self.restaurantObject.searchRestaurant() {
                                     // update all relevant labels
                                     self.updateUI()
+                                    self.searchUberRide(rideRequestbutton: self.rideRequestbutton, userLocationLatitude: userLocationObject._latitude, userLocationLongitude: userLocationObject._longitude)
                                 }
         }, error: {
             (locationRequest, lastLocation, error) in
@@ -90,6 +102,7 @@ class WTFViewController: UIViewController {
         restaurantObject.searchForNewRestaurant(singletonHttpResponseObject: singletonHttpResponseObject)
         // update all relevant labels
         updateUI()
+        self.searchUberRide(rideRequestbutton: self.rideRequestbutton, userLocationLatitude: userLocationObject._latitude, userLocationLongitude: userLocationObject._longitude)
     }
     
     // Description : Updates all labels in the UI
@@ -100,6 +113,31 @@ class WTFViewController: UIViewController {
         self.cuisinesLabel.text = PREFIX_RESTAURANT_CUISINE + self.restaurantObject.restaurantCuisine
         // set the restaurant rating
         self.restaurantRatingsLabel.text = PREFIX_RESTAURANT_RATING + self.restaurantObject.restaurantRating
+    }
+    
+    
+    func searchUberRide(rideRequestbutton: RideRequestButton, userLocationLatitude: String, userLocationLongitude: String){
+        // set the drop off location and pickup location
+        let dropoffLocation = CLLocation(latitude: CLLocationDegrees(restaurantObject.restaurantLatitude)!, longitude: CLLocationDegrees(restaurantObject.restaurantLongitude)!)
+        let pickupLocation = CLLocation(latitude: CLLocationDegrees(userLocationLatitude)!, longitude: CLLocationDegrees(userLocationLongitude)!)
+        
+        //make sure that the pickupLocation is set in the Deeplink
+        let builder = RideParametersBuilder()
+            .setPickupLocation(pickupLocation, nickname: "You")
+            .setDropoffLocation(dropoffLocation, nickname: restaurantObject.restaurantName)
+        
+        
+        // use the same pickupLocation to get the estimate
+        ridesClient.fetchCheapestProduct(pickupLocation: pickupLocation, completion: {
+            product, response in
+            if let productID = product?.productID { //check if the productID exists
+                builder.setProductID(productID)
+                rideRequestbutton.rideParameters = builder.build()
+                
+                // show estimates in the button
+                rideRequestbutton.loadRideInformation()
+            }
+        })
     }
     
 }

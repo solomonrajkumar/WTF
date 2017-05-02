@@ -56,6 +56,27 @@ class Restaurant{
         return _restaurantRating
     }
     
+    // Restaurant Latitude
+    var _restaurantLatitude: String!
+    // Getter for Latitude
+    var restaurantLatitude: String{
+        if _restaurantLatitude == nil{
+            _restaurantLatitude = ""
+        }
+        return _restaurantLatitude
+    }
+    
+    // Restaurant Longitude
+    var _restaurantLongitude: String!
+    // Getter for Longitude
+    var restaurantLongitude: String{
+        if _restaurantLongitude == nil{
+            _restaurantLongitude = ""
+        }
+        return _restaurantLongitude
+    }
+    
+    
     // List of suggested restaurants
     var suggestedRestaurantIds = [String]()
     
@@ -180,6 +201,24 @@ class Restaurant{
         } else{
             // if restaurant link is not present
             print("Restaurant user rating object is missing!")
+        }
+        
+        // Retreive restaurant's location
+        if let restaurantLocation = restaurantObject["location"] as? Dictionary<String, AnyObject>{
+            if let restaurantLatitude = restaurantLocation["latitude"] as? String{
+                self._restaurantLatitude = restaurantLatitude
+            } else{
+                print("Restaurant Latitude object is missing!")
+            }
+            if let restaurantLongitude = restaurantLocation["longitude"] as? String{
+                self._restaurantLongitude = restaurantLongitude
+            } else{
+                print("Restaurant Latitude object is missing!")
+            }
+            
+        } else{
+            // if restaurant link is not present
+            print("Restaurant location object is missing!")
         }
 
     }
