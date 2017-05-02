@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,11 +19,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9NO-fB-aTY">
-                                <rect key="frame" x="16" y="54" width="343" height="58"/>
+                                <rect key="frame" x="16" y="54" width="288" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="2M4-un-Hqs"/>
                                 </constraints>
@@ -32,7 +32,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gW-MN-abG">
-                                <rect key="frame" x="16" y="143" width="343" height="58"/>
+                                <rect key="frame" x="16" y="143" width="288" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="qOg-4M-4ZT"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading ..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpU-qc-xdx">
-                                <rect key="frame" x="16" y="237" width="343" height="58"/>
+                                <rect key="frame" x="16" y="237" width="288" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="7pB-Ql-FUC"/>
                                 </constraints>
@@ -50,11 +50,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ove-kT-sRQ">
-                                <rect key="frame" x="16" y="508" width="343" height="159"/>
+                                <rect key="frame" x="16" y="344" width="288" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="159" id="jFw-aR-euH"/>
+                                    <constraint firstAttribute="height" constant="50" id="jFw-aR-euH"/>
                                 </constraints>
-                                <state key="normal" image="zomato">
+                                <fontDescription key="fontDescription" name="Baskerville-Bold" family="Baskerville" pointSize="17"/>
+                                <state key="normal" title="Take me to Zomato">
                                     <color key="titleColor" red="1" green="0.2203028829" blue="0.36139375270000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -62,7 +63,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V41-zH-ATS">
-                                <rect key="frame" x="150" y="303" width="75" height="75"/>
+                                <rect key="frame" x="122.5" y="501" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="hCK-Aw-d78"/>
                                     <constraint firstAttribute="height" constant="75" id="yXQ-hP-vgm"/>
@@ -80,9 +81,9 @@
                             <constraint firstItem="9NO-fB-aTY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="6x4-fr-LAN"/>
                             <constraint firstItem="4gW-MN-abG" firstAttribute="trailing" secondItem="9NO-fB-aTY" secondAttribute="trailing" id="83V-Yj-wqs"/>
                             <constraint firstItem="V41-zH-ATS" firstAttribute="centerX" secondItem="CpU-qc-xdx" secondAttribute="centerX" id="DGv-8b-DEZ"/>
-                            <constraint firstItem="V41-zH-ATS" firstAttribute="top" secondItem="CpU-qc-xdx" secondAttribute="bottom" constant="8" symbolic="YES" id="F6t-0I-TVP"/>
+                            <constraint firstItem="V41-zH-ATS" firstAttribute="top" secondItem="CpU-qc-xdx" secondAttribute="bottom" constant="206" id="F6t-0I-TVP"/>
                             <constraint firstItem="9NO-fB-aTY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="UDn-d3-z3v"/>
-                            <constraint firstItem="ove-kT-sRQ" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="Xn1-KN-mpB"/>
+                            <constraint firstItem="ove-kT-sRQ" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-174" id="Xn1-KN-mpB"/>
                             <constraint firstItem="CpU-qc-xdx" firstAttribute="trailing" secondItem="4gW-MN-abG" secondAttribute="trailing" id="Z7a-eq-h6z"/>
                             <constraint firstItem="CpU-qc-xdx" firstAttribute="top" secondItem="4gW-MN-abG" secondAttribute="bottom" constant="36" id="dll-IV-rMa"/>
                             <constraint firstItem="ove-kT-sRQ" firstAttribute="trailing" secondItem="CpU-qc-xdx" secondAttribute="trailing" id="lWK-C3-WdI"/>
@@ -99,11 +100,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="23.199999999999999" y="31.934032983508249"/>
+            <point key="canvasLocation" x="22.5" y="31.690140845070424"/>
         </scene>
     </scenes>
     <resources>
         <image name="reload" width="100" height="100"/>
-        <image name="zomato" width="1000" height="400"/>
     </resources>
 </document>
