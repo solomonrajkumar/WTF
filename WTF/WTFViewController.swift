@@ -24,11 +24,15 @@ class WTFViewController: UIViewController {
     
     @IBOutlet weak var restaurantRatingsLabel: UILabel!
     
+    
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var bottomView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // center button
-        rideRequestbutton.center = view.center
+        rideRequestbutton.center = bottomView.center
         
         //put the button in the view
         view.addSubview(rideRequestbutton)
@@ -70,6 +74,8 @@ class WTFViewController: UIViewController {
             restaurantObject.searchForNewRestaurant(singletonHttpResponseObject: singletonHttpResponseObject)
             // update all relevant labels
             updateUI()
+            // search for uber based on new restaurant found
+            searchUberRide(rideRequestbutton: self.rideRequestbutton, userLocationLatitude: userLocationObject._latitude, userLocationLongitude: userLocationObject._longitude)
         }
     }
     
