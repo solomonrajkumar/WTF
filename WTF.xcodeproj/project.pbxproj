@@ -14,6 +14,8 @@
 		688CCE051EB0EB17008FD711 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 688CCE031EB0EB17008FD711 /* LaunchScreen.storyboard */; };
 		688CCE101EB0EB17008FD711 /* WTFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688CCE0F1EB0EB17008FD711 /* WTFTests.swift */; };
 		688CCE1B1EB0EB17008FD711 /* WTFUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688CCE1A1EB0EB17008FD711 /* WTFUITests.swift */; };
+		68DA3B121EDD118A00B340F7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DA3B101EDD118A00B340F7 /* LoginViewController.swift */; };
+		68DA3B131EDD118A00B340F7 /* RegisterUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68DA3B111EDD118A00B340F7 /* RegisterUserViewController.swift */; };
 		68E1BBA81EB0F13B0024609F /* WTFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E1BBA71EB0F13B0024609F /* WTFViewController.swift */; };
 		68E1BBAA1EB0F23C0024609F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E1BBA91EB0F23C0024609F /* Constants.swift */; };
 		68E1BBAC1EB0F2460024609F /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68E1BBAB1EB0F2460024609F /* Restaurant.swift */; };
@@ -51,6 +53,8 @@
 		688CCE161EB0EB17008FD711 /* WTFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WTFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		688CCE1A1EB0EB17008FD711 /* WTFUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTFUITests.swift; sourceTree = "<group>"; };
 		688CCE1C1EB0EB17008FD711 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68DA3B101EDD118A00B340F7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		68DA3B111EDD118A00B340F7 /* RegisterUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterUserViewController.swift; sourceTree = "<group>"; };
 		68E1BBA71EB0F13B0024609F /* WTFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WTFViewController.swift; sourceTree = "<group>"; };
 		68E1BBA91EB0F23C0024609F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		68E1BBAB1EB0F2460024609F /* Restaurant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 		68E1BBA41EB0F0A40024609F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				68DA3B101EDD118A00B340F7 /* LoginViewController.swift */,
+				68DA3B111EDD118A00B340F7 /* RegisterUserViewController.swift */,
 				68E1BBA71EB0F13B0024609F /* WTFViewController.swift */,
 			);
 			name = Controller;
@@ -378,8 +384,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68DA3B121EDD118A00B340F7 /* LoginViewController.swift in Sources */,
 				68E1BBAC1EB0F2460024609F /* Restaurant.swift in Sources */,
 				68E1BBA81EB0F13B0024609F /* WTFViewController.swift in Sources */,
+				68DA3B131EDD118A00B340F7 /* RegisterUserViewController.swift in Sources */,
 				688CCDFB1EB0EB17008FD711 /* AppDelegate.swift in Sources */,
 				68E1BBAA1EB0F23C0024609F /* Constants.swift in Sources */,
 				68E1BBAE1EB0F8560024609F /* UserLocation.swift in Sources */,
