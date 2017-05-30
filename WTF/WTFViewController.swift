@@ -31,6 +31,7 @@ class WTFViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         // center button
         rideRequestbutton.center = bottomView.center
         
