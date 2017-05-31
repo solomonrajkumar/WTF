@@ -18,6 +18,8 @@ class RegisterUserViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userNameTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    var firstName = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,12 +63,16 @@ class RegisterUserViewController: UIViewController, UITextFieldDelegate {
     }
     */
     
+    
     @IBAction func registerUserAction(_ sender: Any) {
         
         let firstname = self.firstNameTextField.text!
         let lastname = self.lastNameTextField.text!
         let username = self.userNameTextField.text!
         let password = self.passwordTextField.text!
+        
+        // will be sent to WTF VC
+        firstName = firstname
         
         let requestBody = [
             "firstname" : firstname,
@@ -76,7 +82,7 @@ class RegisterUserViewController: UIViewController, UITextFieldDelegate {
         ]
         
         // Make the http get request for restaurant search
-        Alamofire.request("http://192.168.0.102:3000/register", method: .post, parameters: requestBody,encoding: JSONEncoding.default)
+        Alamofire.request("http://192.168.0.100:3000/register", method: .post, parameters: requestBody,encoding: JSONEncoding.default)
             .responseJSON { response in
                 if (response.result.value as? Dictionary<String, AnyObject>) != nil {
                     let statusCode = (response.response?.statusCode)!
@@ -86,7 +92,7 @@ class RegisterUserViewController: UIViewController, UITextFieldDelegate {
                     if statusCode == 200{
                         alert = UIAlertController(title: "Success!", message: "Registration successful", preferredStyle: UIAlertControllerStyle.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
-                            (alert: UIAlertAction!) in self.performSegue(withIdentifier: "unwindToLoginView", sender: self)
+                            (alert: UIAlertAction!) in self.performSegue(withIdentifier: "unwindToWTFFromRegisterSegue", sender: self.firstName)
                         }))
                     } else if statusCode == 409{
                         alert = UIAlertController(title: "Error", message: "UserName already exists", preferredStyle: UIAlertControllerStyle.alert)
@@ -107,7 +113,7 @@ class RegisterUserViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func cancelRegisterAction(_ sender: Any) {
         
-        performSegue(withIdentifier: "unwindToLoginView", sender: self)
+        performSegue(withIdentifier: "unwindToLoginFromRegisterSegue", sender: self)
 
     }
     
@@ -130,6 +136,17 @@ class RegisterUserViewController: UIViewController, UITextFieldDelegate {
     }
 
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "unwindToWTFFromRegisterSegue" {
+            
+            let firstName = sender as! String
+            
+            let destinationViewController = segue.destination as! WTFViewController
+            destinationViewController.userFirstName = "\(firstName)!"
+        }
+        
+    }
 
 }

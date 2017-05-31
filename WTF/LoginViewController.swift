@@ -42,6 +42,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     
+    @IBAction func closeLoginView(_ sender: Any) {
+        performSegue(withIdentifier: "unwindToWTFFromLoginSegue", sender: self)
+        
+    }
+    
+    
     @IBAction func loginAction(_ sender: Any) {
         
         view.endEditing(true)
@@ -55,7 +61,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         ]
         
         // Make the http get request for restaurant search
-        Alamofire.request("http://192.168.0.102:3000/login", method: .post, parameters: requestBody,encoding: JSONEncoding.default)
+        Alamofire.request("http://192.168.0.100:3000/login", method: .post, parameters: requestBody,encoding: JSONEncoding.default)
             .responseJSON { response in
                 if let httpResponseObject = response.result.value as? Dictionary<String, AnyObject> {
                     
@@ -67,7 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         let firstName = httpResponseObject["first_name"]!
                         alert = UIAlertController(title: "Success!", message: "Authentication successful", preferredStyle: UIAlertControllerStyle.alert)
                         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
-                            (alert: UIAlertAction!) in self.performSegue(withIdentifier: "successfulLogin", sender: firstName)
+                            (alert: UIAlertAction!) in self.performSegue(withIdentifier: "unwindToWTFFromLoginSegue", sender: firstName)
                         }))
                     } else{
                         alert = UIAlertController(title: "Error", message: "Invalid Credentials!", preferredStyle: UIAlertControllerStyle.alert)
@@ -90,19 +96,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
-        if segue.identifier == "successfulLogin" {
-        
-            let firstName = sender as! String
-        
-            let destinationViewController = segue.destination as! WTFViewController
-            //destinationViewController.userFirstName = "Welcome \(firstName)!"
+        if segue.identifier == "unwindToWTFFromLoginSegue" {
+            
+            if let firstName = sender as? String{
+            
+                let destinationViewController = segue.destination as! WTFViewController
+                destinationViewController.userFirstName = "\(firstName)!"
+            }
         }
+        
     }
     
-    
-    @IBAction func unwindToLoginViewController(sender: UIStoryboardSegue) {
-    }
     
     
     //Calls this function when the tap is recognized.
@@ -121,6 +125,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.passwordTextField.text = ""
     }
     
+    @IBAction func unwindToLoginViewController(sender: UIStoryboardSegue) {
+    }
 
 
 }

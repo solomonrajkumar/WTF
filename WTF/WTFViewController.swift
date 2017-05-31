@@ -28,15 +28,35 @@ class WTFViewController: UIViewController {
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var bottomView: UIView!
     
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var welcomeLabel: UILabel!
+    
+    var userFirstName = ""
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // hide logout button
+        logoutButton.isHidden = true
+        welcomeLabel.isHidden = true
         
         // center button
         rideRequestbutton.center = bottomView.center
         
         //put the button in the view
         view.addSubview(rideRequestbutton)
+        
+        // constraints
+        rideRequestbutton.translatesAutoresizingMaskIntoConstraints = false
+        let xConstraint = NSLayoutConstraint(item: rideRequestbutton, attribute: .centerX, relatedBy: .equal, toItem: self.bottomView, attribute: .centerX, multiplier: 1, constant: 0)
+        
+        let yConstraint = NSLayoutConstraint(item: rideRequestbutton, attribute: .centerY, relatedBy: .equal, toItem: self.bottomView, attribute: .centerY, multiplier: 1, constant: 0)
+        
+        NSLayoutConstraint.activate([xConstraint, yConstraint])
+        
+
         
         // to get shake gesture
         self.becomeFirstResponder()
@@ -59,6 +79,33 @@ class WTFViewController: UIViewController {
             (locationRequest, lastLocation, error) in
             print(error)
         })
+        
+    }
+    
+    
+    @IBAction func logOutUser(_ sender: Any) {
+                
+        let alert = UIAlertController(title: "Signed out successfully!", message: "Good bye \(userFirstName)", preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+            (alert: UIAlertAction!) in self.logoutUserAction()
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if userFirstName != ""{
+            
+            signInButton.isHidden = true
+            logoutButton.isHidden = false
+            welcomeLabel.isHidden = false
+            //print(userFirstName)
+            welcomeLabel.text = "Welcome \(userFirstName)"
+            
+        }
         
     }
     
@@ -145,6 +192,25 @@ class WTFViewController: UIViewController {
                 rideRequestbutton.loadRideInformation()
             }
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier == "signInSegue" {
+                userFirstName = ""
+        }
+        
+    }
+    
+    
+    @IBAction func unwindToWTFViewController(sender: UIStoryboardSegue) {
+    }
+    
+    func logoutUserAction(){
+        logoutButton.isHidden = true
+        welcomeLabel.isHidden = true
+        signInButton.isHidden = false
     }
     
 }
