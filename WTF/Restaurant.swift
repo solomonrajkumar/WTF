@@ -14,6 +14,9 @@ import Alamofire
 // Singleton variable to store the search restaurant http response
 var singletonHttpResponseObject: Dictionary<String, AnyObject>!
 
+// Starting index for search results
+var start = 0
+
 class Restaurant{
 
     // Restaurant Name variable
@@ -90,7 +93,9 @@ class Restaurant{
         // query string for searching based on latitude and longitude
         let queryString = [
             "lat": userLocationObject.latitude,
-            "lon": userLocationObject.longitude
+            "lon": userLocationObject.longitude,
+            "sort": "rating",
+            "start": "\(start)"
         ]
         
         // Make the http get request for restaurant search
@@ -116,6 +121,13 @@ class Restaurant{
     
     func searchForNewRestaurant(singletonHttpResponseObject: Dictionary<String, AnyObject>){
         
+        // if the user has made 20 search again
+        if suggestedRestaurantIds.count == 20{
+            suggestedRestaurantIds.removeAll()
+            fetchMoreRestaurants()
+        }
+        
+        
         // Search for restaurants Dictionary Array
         if let restaurantListObject = singletonHttpResponseObject["restaurants"] as? [Dictionary<String, AnyObject>]{
             
@@ -126,10 +138,6 @@ class Restaurant{
                 // Retrieve the restaurant id
                 if let restaurantId = restaurantObject["id"] as? String{
                     
-                    // if the user has made 20 search again
-                    if suggestedRestaurantIds.count == 20{
-                        suggestedRestaurantIds.removeAll()
-                    }
                     
                     // during the first run(didLoad)
                     if suggestedRestaurantIds.isEmpty{
@@ -221,6 +229,41 @@ class Restaurant{
             print("Restaurant location object is missing!")
         }
 
+    }
+    
+    // Description : Function to retrieve more restaurants once the first 20 restaurants are skipped
+    
+    func fetchMoreRestaurants(){
+        // pull the next 20 restaurants
+        // max limit for zomato search api is 100; so we stop at 80-100
+        if start < 80{
+            start = start + 20
+        } else{
+            start = 0
+        }
+        
+        // query string for searching based on latitude and longitude
+        let queryString = [
+            "lat": userLocationObject.latitude,
+            "lon": userLocationObject.longitude,
+            "sort": "rating",
+            "start": "\(start)"
+        ]
+
+        // Make the http get request for restaurant search
+        Alamofire.request(ZOMATO_SEARCH_RESTAURANT_URL, method: .get, parameters: queryString, headers: ZOMATO_API_HEADERS)
+            .responseJSON { response in
+                if let httpResponseObject = response.result.value as? Dictionary<String, AnyObject> {
+                    // store the response in the singleton variable
+                    singletonHttpResponseObject = httpResponseObject
+                    // called on didLoad()
+                    //self.searchForNewRestaurant(singletonHttpResponseObject: singletonHttpResponseObject)
+                    
+                } else{
+                    print("Failed API call!")
+                }
+        }
+        
     }
     
 }

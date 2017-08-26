@@ -82,7 +82,7 @@ class RegisterUserViewController: UIViewController, UITextFieldDelegate {
         ]
         
         // Make the http get request for restaurant search
-        Alamofire.request("http://192.168.0.100:3000/register", method: .post, parameters: requestBody,encoding: JSONEncoding.default)
+        Alamofire.request("http://192.168.0.103:3000/register", method: .post, parameters: requestBody,encoding: JSONEncoding.default)
             .responseJSON { response in
                 if (response.result.value as? Dictionary<String, AnyObject>) != nil {
                     let statusCode = (response.response?.statusCode)!
