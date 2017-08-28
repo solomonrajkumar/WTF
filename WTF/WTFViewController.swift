@@ -151,6 +151,29 @@ class WTFViewController: UIViewController {
         
     }
     
+    @IBAction func launchGoogleMapsAction(_ sender: Any) {
+        
+        /*
+        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
+            UIApplication.shared.openURL(URL(string:
+                "comgooglemaps://?center=40.765819,-73.975866&zoom=14&views=traffic")!)
+        } else {
+            print("Can't use comgooglemaps://");
+        }*/
+        
+        
+        let googleMapsURL = NSURL(string: "https://www.google.com/maps/dir/?api=1&origin=\(userLocationObject.latitude),\(userLocationObject.longitude)&origin_place_id=You&destination=\(restaurantObject.restaurantLatitude),\(restaurantObject.restaurantLongitude)")!
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(googleMapsURL as URL, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(googleMapsURL as URL)
+        }
+
+        
+    }
+    
+    
     // Description : Function to search for a new restaurant
     @IBAction func searchAgainAction(_ sender: Any) {
         restaurantObject.searchForNewRestaurant(singletonHttpResponseObject: singletonHttpResponseObject)
